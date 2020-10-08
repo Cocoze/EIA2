@@ -1,5 +1,5 @@
 "use strict";
-// https://www.w3schools.com/
+// Hilfe von https://www.w3schools.com/
 window.addEventListener("load", function () {
     var ausgabe = prompt("Wie heißt du?", "");
     if (ausgabe != null) {

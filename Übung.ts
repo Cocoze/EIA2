@@ -1,4 +1,4 @@
-// https://www.w3schools.com/
+// Hilfe von https://www.w3schools.com/
 window.addEventListener("load", function() {
 var ausgabe: string = prompt ("Wie heißt du?", "");
 
