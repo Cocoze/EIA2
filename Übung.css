@@ -1,0 +1,10 @@
+html {
+    background-color: lightcoral;
+}
+
+p {
+    font-size: 40pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-align: center;
+}
