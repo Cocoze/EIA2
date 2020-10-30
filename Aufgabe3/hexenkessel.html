@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexenkessel</title>
+    <link rel="stylesheet" href="sytlekessel.css">
+    <script src="hexenkessel.js"></script>
+</head>
+
+<body>
+    <h1>Hexenkessel</h1>
+    <h2>create your own potion</h2>
+    <br>
+    <h3>Name des Tranks</h3>
+    <input class="trank" placeholder="">
+    <br>
+    <h3>Beschreibung, Risiken und Nebenwirkungen</h3>
+    <textarea name="message" class="message" placeholder=""></textarea>
+    <br>
+    <h3>Wirkung</h3>
+    <input type="radio" id="trank1" name="button">
+    <label>Liebestrank</label>
+    <br>
+    <input type="radio" id="trank2" name="button">
+    <label>Vielsafttrank</label>
+    <br>
+    <input type="radio" id="trank3" name="button">
+    <label>Alterungstrank</label>
+    <br>
+    <input type="radio" id="trank4" name="button">
+    <label>Stärketrank</label>
+    <br>
+    <h3>Dauer der Wirkung</h3>
+    <div class="custom-select" style="width:200px;">
+        <select>
+      <option value="0">Dauer in h:</option>
+      <option value="1">0,5</option>
+      <option value="2">1</option>
+      <option value="3">1,5</option>
+      <option value="4">2</option>
+      <option value="5">2,5</option>
+      <option value="6">3</option>
+    </select>
+    </div>
+    <br>
+    <h3>Konsitenz</h3>
+    <div class="custom-select" style="width:200px;">
+        <select>
+      <option value="0">Konsitenz:</option>
+      <option value="1">zäh</option>
+      <option value="2">dünnflüssig</option>
+      <option value="3">schleimig</option>
+      </select>
+    </div>
+
+    <h3>Farbe</h3>
+    <input type="color">
+    <br>
+    <h3>Zutaten</h3>
+    <input type="checkbox" price="5">
+    <input type="text">
+    <br>
+    <br>
+    <input type="checkbox" price="5">
+    <input type="text">
+    <br>
+    <br>
+    <input type="checkbox" price="5">
+    <input type="text">
+    <br>
+    <br>
+    <input type="checkbox" price="5">
+    <input type="text">
+    <br>
+    <br>
+    <input type="checkbox" price="5">
+    <input type="text">
+    <br>
+    <h3>Temperatur in C°</h3>
+    <input type="number">
+    <br>
+    <h3>Rühren</h3>
+    <p>langsam <input type="range">schnell</p>
+
+    <div class="recipe">Recipe</div>
+</body>
+
+</html>
