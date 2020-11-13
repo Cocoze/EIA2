@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hexenkessel</title>
     <link rel="stylesheet" href="stylekesselversuch.css">
+    <script src="kesselversuch.js"></script>
+    <script src="generatecontent.js"></script>
+    <script src="data.js"></script>
 
 </head>
 
@@ -15,93 +18,79 @@
     <h2>create your own potion</h2>
     <br>
     <form>
-        <fieldset id="fs1">
-            <h3>Name des Tranks</h3>
-            <input class="trank" placeholder="">
+        <div id="form">
+            <fieldset id="fs1">
+                <h3>Name des Tranks</h3>
+                <input class="trank" placeholder="" name="Name des Tranks">
+                <br>
+                <h3>Beschreibung, Risiken und Nebenwirkungen</h3>
+                <textarea name="Beschreibung, Risiken und Nebenwirkungen" class="message" placeholder=""></textarea>
+                <br>
+                <h3>Wirkung</h3>
+                <input type="radio" id="trank1" name="Wirkung">
+                <label>Liebestrank</label>
+                <br>
+                <input type="radio" id="trank2" name="Wirkung">
+                <label>Vielsafttrank</label>
+                <br>
+                <input type="radio" id="trank3" name="Wirkung">
+                <label>Alterungstrank</label>
+                <br>
+                <input type="radio" id="trank4" name="Wirkung">
+                <label>Stärketrank</label>
+                <br>
+                <button type="button" class="addbutton1">add</button>
+            </fieldset>
             <br>
-            <h3>Beschreibung, Risiken und Nebenwirkungen</h3>
-            <textarea name="message" class="message" placeholder=""></textarea>
+            <fieldset id="Ingredients">
+                <h3>Zutaten</h3>
+                <br>
+                <button type="button" class="addbutton2">add</button>
+            </fieldset>
             <br>
-            <h3>Wirkung</h3>
-            <input type="radio" id="trank1" name="button">
-            <label>Liebestrank</label>
-            <br>
-            <input type="radio" id="trank2" name="button">
-            <label>Vielsafttrank</label>
-            <br>
-            <input type="radio" id="trank3" name="button">
-            <label>Alterungstrank</label>
-            <br>
-            <input type="radio" id="trank4" name="button">
-            <label>Stärketrank</label>
-            <br>
-            <button type="button" class="addbutton1">add</button>
-        </fieldset>
-        <br>
-        <fieldset id="fs2">
-            <h3>Zutaten</h3>
-            <input type="checkbox" price="5">
-            <input type="text">
-            <br>
-            <br>
-            <input type="checkbox" price="5">
-            <input type="text">
-            <br>
-            <br>
-            <input type="checkbox" price="5">
-            <input type="text">
-            <br>
-            <br>
-            <input type="checkbox" price="5">
-            <input type="text">
-            <br>
-            <br>
-            <input type="checkbox" price="5">
-            <input type="text">
-            <br>
-            <button type="button" class="addbutton2">add</button>
-        </fieldset>
-        <br>
-        <fieldset id="fs3">
-            <h3>Dauer der Wirkung</h3>
-            <div class="custom-select" style="width:200px;">
-                <select>
-          <option value="0">Dauer in h:</option>
-          <option value="1">0,5</option>
-          <option value="2">1</option>
-          <option value="3">1,5</option>
-          <option value="4">2</option>
-          <option value="5">2,5</option>
-          <option value="6">3</option>
-        </select>
-            </div>
-            <br>
-            <h3>Konsitenz</h3>
-            <div class="custom-select" style="width:200px;">
-                <select>
-          <option value="0">Konsitenz:</option>
-          <option value="1">zäh</option>
-          <option value="2">dünnflüssig</option>
-          <option value="3">schleimig</option>
-          </select>
-            </div>
+            <fieldset id="fs3">
+                <h3>Dauer der Wirkung</h3>
+                <div class="custom-select" style="width:200px;" name="Dauer der Wirkung">
+                    <select>
+                        <option value="0">Dauer in h:</option>
+                        <option value="1">0,5</option>
+                        <option value="2">1</option>
+                        <option value="3">1,5</option>
+                        <option value="4">2</option>
+                        <option value="5">2,5</option>
+                        <option value="6">3</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Konsitenz</h3>
+                <div class="custom-select" style="width:200px;" name="Konsitenz">
+                    <select>
+                        <option value="0">Konsitenz:</option>
+                        <option value="1">zäh</option>
+                        <option value="2">dünnflüssig</option>
+                        <option value="3">schleimig</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Farbe</h3>
+                <input type="color" name="Farbe">
+                <br>
+                <h3>Temperatur in C°</h3>
+                <input type="number" name="Temperatur">
+                <br>
+                <h3>Rühren</h3>
+                <p>langsam <input type="range" min="0" max="20" step="1" value="0" name="Rühren">schnell</p>
+                <button type="button" class="addbutton3">add</button>
 
-            <h3>Farbe</h3>
-            <input type="color">
-            <br>
-
-            <h3>Temperatur in C°</h3>
-            <input type="number">
-            <br>
-            <h3>Rühren</h3>
-            <p>langsam <input type="range">schnell</p>
-            <button type="button" class="addbutton3">add</button>
-
-        </fieldset>
+            </fieldset>
+        </div>
+    </form>
+    <div id="form2">
         <button type="submit" class="submitbutton">send recipe</button>
 
         <div class="recipe">Recipe</div>
-    </form>
+    </div>
+
 </body>
 
 </html>
