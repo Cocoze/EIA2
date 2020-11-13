@@ -8,7 +8,8 @@ var Hexenkessel;
             { name: "Drachenzähne", price: 40 },
             { name: "Eisenkraut", price: 25 },
             { name: "Schlangenzähne", price: 40 },
-            { name: "Alraunen", price: 40 }
+            { name: "Alraunen", price: 50 },
+            { name: "Einhornnagel", price: 50 }
         ]
     };
 })(Hexenkessel || (Hexenkessel = {}));

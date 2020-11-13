@@ -12,10 +12,11 @@ namespace Hexenkessel {
         Ingredients: [
             { name: "Spinnen", price: 20 },
             { name: "graue Haare", price: 20 },
-            { name: "Drachenzähne", price: 40 }
-            { name: "Eisenkraut", price: 25 }
-            { name: "Schlangenzähne", price: 40 }
-            { name: "Alraunen", price: 40 }
+            { name: "Drachenzähne", price: 40 },
+            { name: "Eisenkraut", price: 25 },
+            { name: "Schlangenzähne", price: 40 },
+            { name: "Alraunen", price: 50 },
+            { name: "Einhornnagel", price: 50 }
         ]
         
     };

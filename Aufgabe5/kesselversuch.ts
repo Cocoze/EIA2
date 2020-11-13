@@ -3,12 +3,14 @@ namespace Hexenkessel {
     let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
     form.addEventListener("change", handleLoad);
 
-    let response: Response = await fetch("Data.json");
-    let offer: string = await response.text();
-    let data: Data = JSON.parse(offer);
+   
 
     async function handleLoad(_event: Event): Promise<void> {
         generateContent(data);
+        
+        let response: Response = await fetch("Data.json");
+        let offer: string = await response.text();
+        let data: Data = JSON.parse(offer);
 
         let buttoninformation: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton1");
         buttoninformation.addEventListener("click", handleinformation);

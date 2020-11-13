@@ -4,11 +4,11 @@ var Hexenkessel;
     window.addEventListener("load", handleLoad);
     let form = document.querySelector("div#form");
     form.addEventListener("change", handleLoad);
-    let response = await fetch("Data.json");
-    let offer = await response.text();
-    let data = JSON.parse(offer);
     async function handleLoad(_event) {
         Hexenkessel.generateContent(data);
+        let response = await fetch("Data.json");
+        let offer = await response.text();
+        let data = JSON.parse(offer);
         let buttoninformation = document.querySelector(".addbutton1");
         buttoninformation.addEventListener("click", handleinformation);
         let buttoningredients = document.querySelector(".addbutton2");
