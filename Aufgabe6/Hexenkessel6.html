@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylekessel6.css">
     <script src="kesselaufgabe6.js"></script>
     <script src="generatecontent6.js"></script>
-    <script src="data6.js"></script>
+    <script src="data6.json"></script>
 
 </head>
 
@@ -27,16 +27,16 @@
                 <textarea name="Beschreibung, Risiken und Nebenwirkungen" class="message" placeholder=""></textarea>
                 <br>
                 <h3>Wirkung</h3>
-                <input type="radio" id="trank1" name="Wirkung">
+                <input type="radio" id="trank1" name="Wirkung" value="Liebestrank">
                 <label>Liebestrank</label>
                 <br>
-                <input type="radio" id="trank2" name="Wirkung">
+                <input type="radio" id="trank2" name="Wirkung" value="Vielsafttrank">
                 <label>Vielsafttrank</label>
                 <br>
-                <input type="radio" id="trank3" name="Wirkung">
+                <input type="radio" id="trank3" name="Wirkung" value="Alterungstrank">
                 <label>Alterungstrank</label>
                 <br>
-                <input type="radio" id="trank4" name="Wirkung">
+                <input type="radio" id="trank4" name="Wirkung" value="Stärketrank">
                 <label>Stärketrank</label>
                 <br>
                 <button type="button" class="addbutton1">add</button>
@@ -86,7 +86,8 @@
         </div>
     </form>
     <form id="formrezept">
-        <div id="recipe">Recipe</div>
+        Recipe
+        <div id="recipe"></div>
 
         <div id="form2"></div>
         <button type="button" class="submitbutton">send recipe</button>

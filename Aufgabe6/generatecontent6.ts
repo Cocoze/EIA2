@@ -1,5 +1,12 @@
 namespace Hexenkessel6 {
+    export interface Item {
+        name: string;
+        price: number;
+    }
 
+    export interface Data {
+        [category: string]: Item[];
+    }
     export function generateContent(_data: Data): void {
 
         for (let category in _data) {

@@ -2,7 +2,7 @@ namespace Hexenkessel6 {
     window.addEventListener("load", handleLoad);
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
     //let url: string = "index.html";
-    let url: string = "http://localhost:5001";
+
 
 
 
@@ -11,6 +11,7 @@ namespace Hexenkessel6 {
         let response: Response = await fetch("data6.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
+        console.log(JSON.stringify(data));
         generateContent(data);
 
 
@@ -31,18 +32,16 @@ namespace Hexenkessel6 {
     }
 
     function handleinformation(): void {
-        let price: number = 0;
+
         let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#recipe");
         //recipe.innerHTML = "";
         let formData: FormData = new FormData(document.forms[0]);       //0 für meine erste Form
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);
 
-
+        recipe.innerHTML = "";
         for (let entry of formData) {
-            let selector: string = "[value='" + entry[1] + "']";
-            let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
-            let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
+
             switch (entry[0]) {
                 case "Name des Tranks":
                     if (entry[1] != "") {
@@ -58,83 +57,98 @@ namespace Hexenkessel6 {
 
                 case "Wirkung":
                     if (entry[1] != "") {
-                        ingredients.innerHTML += entry[0] + "Wirkung: " + entry[1] + "<br>";
+                        recipe.innerHTML += "Wirkung: " + entry[1] + "<br>";
 
                     }
                     break;
             }
-            price += ingredientsPrice;
+
         }
-        recipe.innerHTML += "<p><strong>Total: : €" + money;
+
     }
 
 
-    function handleingredients(_event: Event): void;
-    let price: number = 0;
-    let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div.recipe");
-    //recipe.innerHTML = "";
-
-    let formData: FormData = new FormData(document.forms[0]);
-
-    /*for (let entry of formData) {
-        let selector: string = "[value='" + entry[1] + "']";
-        let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
-        let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
-
-    }*/
-
-
-    function handleselections(): void;
-    for (let entry of formData) {
-        let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
-        let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
-        switch (entry[0]) {
-            case "Dauer der Wirkung":
-                if (entry[1] != "0") {
-                    recipe.innerHTML += "Dauer: " + entry[1] + "<br>";
-                }
-                break;
-
-            case "Konsistenz":
-                if (entry[1] != "0") {
-                    recipe.innerHTML += "Konsistenz: " + entry[1] + "<br>";
-                }
-                break;
-
-            case "Farbe":
-                if (entry[1] != "") {
-                    recipe.innerHTML += "Farbe: " + entry[1] + "<br>";
-                }
-                break;
-
-            case "Temperatur":
-                if (entry[1] != "") {
-                    recipe.innerHTML += "Temperatur: " + entry[1] + "<br>";
-                }
-                break;
-
-            case "Rühren":
-                if (Number(entry[1]) != 0) {
-                    recipe.innerHTML += "Rühren: " + entry[1] + "<br>";
-                }
-                break;
-
-        }
-        price += ingredientsPrice;
-    }
-    recipe.innerHTML += "<p><strong>Total: : €" + money;
-
-
-
-
-   /*  async function handlesubmit(_event: Event): Promise<void> {
+    function handleingredients(_event: Event): void {
+        let price: number = 0;
+        let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#recipe");
+        //recipe.innerHTML = "";
 
         let formData: FormData = new FormData(document.forms[0]);
+
+        for (let entry of formData) {
+            if (entry[0] == "Ingredients") {
+                let selector: string = "[value='" + entry[1] + "']";
+                let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
+                console.log(entry[1]);
+                let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
+                recipe.innerHTML += "Zutat:" + entry[1] + " " + "<br>";
+            }
+        }
+    }
+
+    function handleselections(): void {
+        let recipe: HTMLDivElement = <HTMLDivElement>document.querySelector("div.recipe");
+        let formData: FormData = new FormData(document.forms[0]);
+        let price: number = 0;
+        let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        console.log(inputs);
+
+        recipe.innerHTML = "";
+
+        for (let entry of formData) {
+            let selector: string = "[value='" + entry[1] + "']";
+            let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
+            let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
+
+            switch (entry[0]) {
+                case "Dauer der Wirkung":
+                    if (entry[1] != "0") {
+                        recipe.innerHTML += "Dauer: " + entry[1] + "<br>";
+                    }
+                    break;
+
+                case "Konsistenz":
+                    if (entry[1] != "0") {
+                        recipe.innerHTML += "Konsistenz: " + entry[1] + "<br>";
+                    }
+                    break;
+
+                case "Farbe":
+                    if (entry[1] != "") {
+                        recipe.innerHTML += "Farbe: " + entry[1] + "<br>";
+                    }
+                    break;
+
+                case "Temperatur":
+                    if (entry[1] != "") {
+                        recipe.innerHTML += "Temperatur: " + entry[1] + "<br>";
+                    }
+                    break;
+
+                case "Rühren":
+                    if (Number(entry[1]) != 0) {
+                        recipe.innerHTML += "Rühren: " + entry[1] + "<br>";
+                    }
+                    break;
+
+            }
+            price += ingredientsPrice;
+
+            recipe.innerHTML += "<p><strong>Total: : €" + money;
+        }
+    }
+
+
+
+    async function handlesubmit(_event: Event): Promise<void> {
+
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "http://localhost:5001/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + query.toString());
+        let response: Response = await fetch(url + "?" + query.toString());
         let responseText: string = await response.text();
         alert(responseText);
-    } */
+    }
 
     function money(_price: number): string {
         let knut: number;
