@@ -2,29 +2,36 @@
 var Hexenkessel6;
 (function (Hexenkessel6) {
     window.addEventListener("load", handleLoad);
-    let form = document.querySelector("div#form");
+    //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
     //let url: string = "index.html";
     let url = "http://localhost:5001";
     async function handleLoad(_event) {
-        Hexenkessel6.generateContent(data);
-        let response = await fetch("Data.json");
+        let response = await fetch("data6.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        let buttoninformation = document.querySelector(".addbutton1");
+        Hexenkessel6.generateContent(data);
+        /*let buttoninformation: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton1");
         buttoninformation.addEventListener("click", handleinformation);
-        let buttoningredients = document.querySelector(".addbutton2");
+        let buttoningredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton2");
         buttoningredients.addEventListener("click", handleingredients);
-        let buttonselections = document.querySelector(".addbutton3");
+        let buttonselections: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton3");
         buttonselections.addEventListener("click", handleselections);
-        let buttonsubmit = document.querySelector(".submitbutton");
+        let buttonsubmit: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".submitbutton");
         buttonsubmit.addEventListener("click", handlesubmit);
+
+ */
+        document.querySelector(".addbutton1").addEventListener("click", handleinformation);
+        document.querySelector(".addbutton2").addEventListener("click", handleingredients);
+        document.querySelector(".addbutton3").addEventListener("click", handleselections);
+        document.querySelector(".submitbutton").addEventListener("click", handlesubmit);
     }
     function handleinformation() {
         let price = 0;
         let recipe = document.querySelector("div#recipe");
-        recipe.innerHTML = "";
+        //recipe.innerHTML = "";
         let formData = new FormData(document.forms[0]); //0 für meine erste Form
-        let inputs = document.querySelector("input");
+        let inputs = document.querySelectorAll("input");
+        console.log(inputs);
         for (let entry of formData) {
             let selector = "[value='" + entry[1] + "']";
             let ingredients = document.querySelector(selector);
@@ -52,8 +59,8 @@ var Hexenkessel6;
     }
     let price = 0;
     let recipe = document.querySelector("div.recipe");
-    recipe.innerHTML = "";
-    let formData = new FormData(form);
+    //recipe.innerHTML = "";
+    let formData = new FormData(document.forms[0]);
     for (let entry of formData) {
         let ingredients = document.querySelector(selector);
         let ingredientsPrice = Number(ingredients.getAttribute("price"));
@@ -87,13 +94,14 @@ var Hexenkessel6;
         price += ingredientsPrice;
     }
     recipe.innerHTML += "<p><strong>Total: : €" + money;
-    async function handlesubmit(_event) {
-        let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
-        let response = await fetch(url + query.toString());
-        let responseText = await response.text();
-        alert(responseText);
-    }
+    /*  async function handlesubmit(_event: Event): Promise<void> {
+ 
+         let formData: FormData = new FormData(document.forms[0]);
+         let query: URLSearchParams = new URLSearchParams(<any>formData);
+         let response: Response = await fetch(url + query.toString());
+         let responseText: string = await response.text();
+         alert(responseText);
+     } */
     function money(_price) {
         let knut;
         let sickel;

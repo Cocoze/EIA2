@@ -2,6 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 export namespace Hexenkessel6 {
     let server: Http.Server = Http.createServer();
+    console.log("server");
 
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined)

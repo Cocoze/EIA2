@@ -6,6 +6,7 @@ const Url = require("url");
 var Hexenkessel6;
 (function (Hexenkessel6) {
     let server = Http.createServer();
+    console.log("server");
     let port = process.env.PORT;
     if (port == undefined)
         port = 5001;
