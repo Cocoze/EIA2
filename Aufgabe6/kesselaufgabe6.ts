@@ -143,8 +143,8 @@ namespace Hexenkessel6 {
     async function handlesubmit(_event: Event): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "http://localhost:5001/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+        let url: string = "https://alraune.herokuapp.com/?" + query.toString();
         let response: Response = await fetch(url + "?" + query.toString());
         let responseText: string = await response.text();
         alert(responseText);

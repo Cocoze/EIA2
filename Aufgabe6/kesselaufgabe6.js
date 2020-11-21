@@ -111,8 +111,8 @@ var Hexenkessel6;
     }
     async function handlesubmit(_event) {
         let formData = new FormData(document.forms[0]);
-        let url = "http://localhost:5001/";
         let query = new URLSearchParams(formData);
+        let url = "https://alraune.herokuapp.com/?" + query.toString();
         let response = await fetch(url + "?" + query.toString());
         let responseText = await response.text();
         alert(responseText);
