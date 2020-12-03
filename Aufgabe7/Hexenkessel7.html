@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexenkessel</title>
+    <link rel="stylesheet" href="stylekessel7.css">
+    <script src="kesselaufgabe7.js"></script>
+    <script src="generatecontent7.js"></script>
+
+
+</head>
+
+<body>
+    <img src="https://raw.githubusercontent.com/Cocoze/EIA2/master/Aufgabe5/potion.jpg">
+    <h1>Hexenkessel</h1>
+    <h2>create your own potion</h2>
+    <br>
+    <form>
+        <div id="form">
+            <fieldset id="fs1">
+                <h3>Name des Tranks</h3>
+                <input class="trank" placeholder="" name="Name des Tranks">
+                <br>
+                <h3>Beschreibung, Risiken und Nebenwirkungen</h3>
+                <textarea name="Beschreibung, Risiken und Nebenwirkungen" class="message" placeholder=""></textarea>
+                <br>
+                <h3>Wirkung</h3>
+                <input type="radio" id="trank1" name="Wirkung" value="Liebestrank">
+                <label>Liebestrank</label>
+                <br>
+                <input type="radio" id="trank2" name="Wirkung" value="Vielsafttrank">
+                <label>Vielsafttrank</label>
+                <br>
+                <input type="radio" id="trank3" name="Wirkung" value="Alterungstrank">
+                <label>Alterungstrank</label>
+                <br>
+                <input type="radio" id="trank4" name="Wirkung" value="Stärketrank">
+                <label>Stärketrank</label>
+                <br>
+                <button type="button" class="addbutton1">add</button>
+            </fieldset>
+            <br>
+            <fieldset id="Ingredients">
+                <h3>Zutaten</h3>
+                <br>
+                <button type="button" class="addbutton2">add</button>
+            </fieldset>
+            <br>
+            <fieldset id="fs3">
+                <h3>Dauer der Wirkung</h3>
+                <div class="custom-select" style="width:200px;">
+                    <select name="Wirkungsdauer">
+                        <option value="0">Dauer in h:</option>
+                        <option value="0,5">0,5</option>
+                        <option value="1">1</option>
+                        <option value="1,5">1,5</option>
+                        <option value="2">2</option>
+                        <option value="2,5">2,5</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Konsistenz</h3>
+                <div class="custom-select" style="width:200px;">
+                    <select name="Konsistenz">
+                        <option value="0">Konsistenz:</option>
+                        <option value="zäh">zäh</option>
+                        <option value="dünnflüssig">dünnflüssig</option>
+                        <option value="schleimig">schleimig</option>
+                    </select>
+                </div>
+                <br>
+                <h3>Farbe</h3>
+                <input type="color" name="Farbe">
+                <br>
+                <h3>Temperatur in C°</h3>
+                <input type="number" name="Temperatur">
+                <br>
+                <h3>Rühren</h3>
+                <p>langsam <input type="range" min="0" max="20" step="1" value="0" name="Rühren">schnell</p>
+                <button type="button" class="addbutton3">add</button>
+
+            </fieldset>
+        </div>
+    </form>
+    <form id="formrezept">
+        Recipe
+        <div id="recipe"></div>
+
+        <div id="form2"></div>
+        <button type="button" class="submitbutton">send recipe</button>
+
+        </div>
+    </form>
+</body>
+
+</html>
