@@ -4,7 +4,7 @@ var Hexenkessel7;
     window.addEventListener("load", handleLoad);
     let form;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url = "https://alraune.herokuapp.com/..";
+    let url = "https://alraune.herokuapp.com/";
     async function handleLoad(_event) {
         let response = await fetch("data7.json");
         let offer = await response.text();

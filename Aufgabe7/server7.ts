@@ -16,7 +16,8 @@ export namespace Hexenkessel7 {
     //let databaseUrl: string = "mongodb://localhost:27017";
     
     let dbpassword: string = "S4AegjBzTxjIIT3r";
-    let databaseUrl: string = "mongodb+srv://cocosatlas:" + dbpassword + "@eia2.lsydz.mongodb.net/Hexenkessel7";
+    //let databaseUrl: string = "mongodb+srv://cocosatlas:" + dbpassword + "@eia2.lsydz.mongodb.net/Hexenkessel7";
+    let databaseUrl: string = "mongodb+srv://snape:snapi@eia2.lsydz.mongodb.net/Hexenkessel7";
 
     startServer(port);
     connectToDatabase(databaseUrl);

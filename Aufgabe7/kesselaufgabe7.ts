@@ -2,7 +2,7 @@ namespace Hexenkessel7 {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url: string = "https://alraune.herokuapp.com/..";
+    let url: string = "https://alraune.herokuapp.com/";
     
 
 
