@@ -2,7 +2,7 @@ namespace Hexenkessel7 {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url: string = "http://localhost:5000";
+    let url: string = "https://cocoze.github.io/EIA2/Aufgabe7/Hexenkessel7.html";
     
 
 

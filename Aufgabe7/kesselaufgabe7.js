@@ -4,7 +4,7 @@ var Hexenkessel7;
     window.addEventListener("load", handleLoad);
     let form;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url = "http://localhost:5000";
+    let url = "https://cocoze.github.io/EIA2/Aufgabe7/Hexenkessel7.html";
     async function handleLoad(_event) {
         let response = await fetch("data7.json");
         let offer = await response.text();
