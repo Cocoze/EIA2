@@ -11,16 +11,6 @@ var Hexenkessel7;
         let data = JSON.parse(offer);
         console.log(JSON.stringify(data));
         Hexenkessel7.generateContent(data);
-        /*let buttoninformation: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton1");
-        buttoninformation.addEventListener("click", handleinformation);
-        let buttoningredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton2");
-        buttoningredients.addEventListener("click", handleingredients);
-        let buttonselections: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".addbutton3");
-        buttonselections.addEventListener("click", handleselections);
-        let buttonsubmit: HTMLButtonElement = <HTMLButtonElement>document.querySelector(".submitbutton");
-        buttonsubmit.addEventListener("click", handlesubmit);
-
- */
         document.querySelector(".addbutton1").addEventListener("click", handleinformation);
         document.querySelector(".addbutton2").addEventListener("click", handleingredients);
         document.querySelector(".addbutton3").addEventListener("click", handleselections);
