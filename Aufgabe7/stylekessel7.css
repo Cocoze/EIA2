@@ -87,8 +87,25 @@ p {
 
 .submitbutton {
     margin-right: 400px;
-    margin-top: 700px;
+    margin-top: 100px;
     width: 100px;
+    height: 30px;
+    background-color: salmon;
+    font-size: 15px;
+}
+
+.reset {
+    margin-right: 30px;
+    margin-top: 600px;
+    width: 100px;
+    height: 30px;
+    background-color: salmon;
+    font-size: 15px;
+}
+
+#all {
+    margin-right: 30px;
+    margin-top: 10px;
     height: 30px;
     background-color: salmon;
     font-size: 15px;
