@@ -35,6 +35,7 @@ var Hexenkessel7;
         _response.setHeader("content-type", "text/htmls; charset-utf - 8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
+            console.log("hallo");
             let url = Url.parse(_request.url, true);
             for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br/>");
@@ -46,7 +47,7 @@ var Hexenkessel7;
         _response.end();
     }
     function saveOrder(_order) {
-        orders.insert(_order);
+        orders.insertOne(_order);
     }
 })(Hexenkessel7 = exports.Hexenkessel7 || (exports.Hexenkessel7 = {}));
 //# sourceMappingURL=server7.js.map

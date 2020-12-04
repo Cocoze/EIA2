@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Hexenkessel7 {
     interface Order {
-        [type: string]: string | string[];
+        [type: string]: string | string[] | undefined;
     }
     let orders: Mongo.Collection;
 
@@ -44,6 +44,7 @@ export namespace Hexenkessel7 {
         _response.setHeader("content-type", "text/htmls; charset-utf - 8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
+            console.log("hallo");
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "<br/>");
@@ -60,7 +61,7 @@ export namespace Hexenkessel7 {
         _response.end();
     }
     function saveOrder(_order: Order): void {
-        orders.insert(_order);
+        orders.insertOne(_order);
 
     }
 }

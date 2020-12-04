@@ -101,6 +101,7 @@ var Hexenkessel7;
         let url = "https://alraune.herokuapp.com/?" + query.toString();
         //let url: string = "http://localhost:5001/?" + query.toString();
         let response = await fetch(url);
+        console.log(response);
         let responseText = await response.text();
         alert(responseText);
     }

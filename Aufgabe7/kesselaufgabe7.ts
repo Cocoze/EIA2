@@ -133,6 +133,7 @@ namespace Hexenkessel7 {
         let url: string = "https://alraune.herokuapp.com/?" + query.toString();
         //let url: string = "http://localhost:5001/?" + query.toString();
         let response: Response = await fetch(url);
+        console.log(response);
         let responseText: string = await response.text();
         alert(responseText);
     }
