@@ -4,7 +4,7 @@ var Hexenkessel7;
     window.addEventListener("load", handleLoad);
     let form;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url = "https://alraune.herokuapp.com/";
+    //let url: string = "https://alraune.herokuapp.com/";
     async function handleLoad(_event) {
         let response = await fetch("data7.json");
         let offer = await response.text();
@@ -98,8 +98,8 @@ var Hexenkessel7;
     async function handlesubmit(_event) {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        //let url: string = "https://alraune.herokuapp.com/?" + query.toString();
-        let url = "http://localhost:5001/?" + query.toString();
+        let url = "https://alraune.herokuapp.com/?" + query.toString();
+        //let url: string = "http://localhost:5001/?" + query.toString();
         let response = await fetch(url);
         let responseText = await response.text();
         alert(responseText);

@@ -2,7 +2,7 @@ namespace Hexenkessel7 {
     window.addEventListener("load", handleLoad);
     let form: HTMLFormElement;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
-    let url: string = "https://alraune.herokuapp.com/";
+    //let url: string = "https://alraune.herokuapp.com/";
     
 
 
@@ -130,8 +130,8 @@ namespace Hexenkessel7 {
 
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        //let url: string = "https://alraune.herokuapp.com/?" + query.toString();
-        let url: string = "http://localhost:5001/?" + query.toString();
+        let url: string = "https://alraune.herokuapp.com/?" + query.toString();
+        //let url: string = "http://localhost:5001/?" + query.toString();
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
         alert(responseText);
