@@ -11,9 +11,9 @@ var Hexenkessel7;
     if (port == undefined)
         port = 5001;
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let dbpassword = "S4AegjBzTxjIIT3r";
+    //let dbpassword: string = "S4AegjBzTxjIIT3r";
     //let databaseUrl: string = "mongodb+srv://cocosatlas:" + dbpassword + "@eia2.lsydz.mongodb.net/Hexenkessel7";
-    let databaseUrl = "mongodb+srv://snape:snapi@eia2.lsydz.mongodb.net/Hexenkessel7";
+    let databaseUrl = "mongodb+srv://snape:snapi@eia2.lsydz.mongodb.net/Hexenkessel7?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
