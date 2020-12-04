@@ -15,6 +15,7 @@ var Hexenkessel7;
         document.querySelector(".addbutton2").addEventListener("click", handleingredients);
         document.querySelector(".addbutton3").addEventListener("click", handleselections);
         document.querySelector(".submitbutton").addEventListener("click", handlesubmit);
+        document.querySelector(".submitbutton").addEventListener("click", showallrecipes);
     }
     function handleinformation() {
         let recipe = document.querySelector("div#recipe");
@@ -104,6 +105,8 @@ var Hexenkessel7;
         console.log(response);
         let responseText = await response.text();
         alert(responseText);
+    }
+    function showallrecipes(_event) {
     }
     function money(_price) {
         let knut;

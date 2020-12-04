@@ -3,7 +3,7 @@ namespace Hexenkessel7 {
     let form: HTMLFormElement;
     //let form: HTMLFormElement = <HTMLDivElement>document.querySelector("div#form");
     //let url: string = "https://alraune.herokuapp.com/";
-    
+
 
 
 
@@ -15,11 +15,12 @@ namespace Hexenkessel7 {
         generateContent(data);
 
 
-      
+
         document.querySelector(".addbutton1").addEventListener("click", handleinformation);
         document.querySelector(".addbutton2").addEventListener("click", handleingredients);
         document.querySelector(".addbutton3").addEventListener("click", handleselections);
         document.querySelector(".submitbutton").addEventListener("click", handlesubmit);
+        document.querySelector(".submitbutton").addEventListener("click", showallrecipes);
     }
 
     function handleinformation(): void {
@@ -81,7 +82,7 @@ namespace Hexenkessel7 {
         let formData: FormData = new FormData(document.forms[0]);
         let price: number = 0;
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-        
+
 
         let wirkungsdauer: String = <String>formData.get("Wirkungsdauer");
         if (wirkungsdauer != "0") {
@@ -89,7 +90,7 @@ namespace Hexenkessel7 {
         }
 
         let konsistenz: String = <String>formData.get("Konsistenz");
-        if(konsistenz != "0") {
+        if (konsistenz != "0") {
             recipe.innerHTML += "Konsistenz: " + konsistenz + "<br>";
         }
 
@@ -97,7 +98,7 @@ namespace Hexenkessel7 {
             let selector: string = "[value='" + entry[1] + "']";
             let ingredients: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
             //let ingredientsPrice: number = Number(ingredients.getAttribute("price"));
-            switch (entry[0]) {     
+            switch (entry[0]) {
 
                 case "Farbe":
                     if (entry[1] != "") {
@@ -136,6 +137,10 @@ namespace Hexenkessel7 {
         console.log(response);
         let responseText: string = await response.text();
         alert(responseText);
+    }
+
+    function showallrecipes(_event: Event): void {
+
     }
 
     function money(_price: number): string {
