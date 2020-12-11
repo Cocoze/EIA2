@@ -29,7 +29,8 @@ namespace Canvas {
         drawlines();
         drawsnow({ x: 400, y: 0 }, { x: 800, y: 500 });
         drawSki();
-        drawSkier({ x: 500, y: 300 }, { x: 10, y: 10 });
+        drawSkier();
+
 
 
     }
@@ -145,26 +146,20 @@ namespace Canvas {
 
     function drawhouse(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "orange");
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "orange";
         crc2.fillRect(250, 370, 100, 80);
 
     }
     function drawhouse2(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "orange");
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "orange";
         crc2.fillRect(630, 140, 40, 40);
     }
 
 
     function drawroof(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "brown");
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "brown";
         crc2.beginPath();
         crc2.moveTo(300, 320);
         crc2.lineTo(250, 370);
@@ -173,9 +168,7 @@ namespace Canvas {
     }
     function drawroof2(): void {
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "brown");
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "brown";
         crc2.beginPath();
         crc2.moveTo(650, 120);
         crc2.lineTo(630, 140);
@@ -186,8 +179,6 @@ namespace Canvas {
     }
     function drawMountain(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         console.log("ski");
-
-
         crc2.save();
         crc2.beginPath();
         crc2.moveTo(700, 50);
@@ -204,14 +195,11 @@ namespace Canvas {
 
         crc2.fillStyle = gradient;
         crc2.fill();
-
         crc2.restore();
     }
     function drawtrees(): void {
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "green");
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "green";
         crc2.fillRect(505, 400, 10, 40);
         crc2.beginPath();
         crc2.moveTo(510, 350);
@@ -228,12 +216,8 @@ namespace Canvas {
 
     }
     function drawlines(): void {
-        crc2.fillStyle = "black";
         crc2.strokeStyle = "black";
         crc2.save();
-        let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, 100);
-        gradient.addColorStop(1, "black");
-        crc2.fillStyle = gradient;
         crc2.beginPath();
         crc2.moveTo(640, 150);
         crc2.lineTo(320, 340);
@@ -244,67 +228,58 @@ namespace Canvas {
 
 
     }
+    function drawSkier(): void {
+        let skier: number = 20;
+        console.log("ski1");
+        for (let drawn: number = 0; drawn < skier; drawn++) {
 
-    function drawSki(): void {
-        let colors: string[] = ["red", "darkblue", "darkgreen", "violet", "orange"];
-        let random: string = colors[Math.random() * colors.length];
+            let x: number = Math.random() * (800 - 300) + 300;
+            let y: number = Math.random() * (500 - 200) + 200;
+            drawSki(x, y);
+            crc2.fill();
+
+        }
+    }
+
+    function drawSki(x: number, y: number): void {
+        console.log("hey");
+        crc2.save();
+        let colors: string[] = ["red", "darkblue", "lightgreen", "darkviolet", "blue", "yellow"];
+        let random: string = colors[Math.floor(Math.random() * colors.length)];
         crc2.fillStyle = random;
         crc2.strokeStyle = crc2.fillStyle;
-        crc2.fillStyle = "black";
-        crc2.strokeStyle = "black";
+        console.log(random);
         let radius2: number = 5;
-        crc2.save();
+        console.log("xy" + x + " " + y);
         crc2.beginPath();
-        crc2.moveTo(695, 200);
-        crc2.lineTo(690, 225);
-        crc2.lineTo(710, 225);
-        crc2.lineTo(700, 200);
-        crc2.arc(700, 200, radius2, 0, 2 * Math.PI);
-        crc2.lineTo(690, 225);
+        crc2.moveTo(x, y);
+        crc2.lineTo(x - 5, y + 25);
+        crc2.lineTo(x + 15, y + 25);
+        crc2.lineTo(x + 5, y);
+        crc2.arc(x + 5, y, radius2, 0, 2 * Math.PI);
+        crc2.lineTo(x - 5, y + 25);
 
         crc2.closePath();
         crc2.fill();
 
         crc2.beginPath();
-        crc2.moveTo(695, 225);
-        crc2.lineTo(670, 240);
-        crc2.lineTo(675, 240);
-        crc2.lineTo(700, 225);
-        crc2.lineTo(690, 225);
+        crc2.moveTo(x, y + 25);
+        crc2.lineTo(x - 25, y + 40);
+        crc2.lineTo(x - 20, y + 40);
+        crc2.lineTo(x + 5, y + 25);
+        crc2.lineTo(x - 5, y + 25);
 
-        crc2.lineTo(705, 225);
-        crc2.lineTo(680, 240);
-        crc2.lineTo(685, 240);
-        crc2.lineTo(710, 225);
-        crc2.lineTo(695, 225);
+        crc2.lineTo(x + 10, y + 25);
+        crc2.lineTo(x - 15, y + 40);
+        crc2.lineTo(x - 10, y + 40);
+        crc2.lineTo(x + 15, y + 25);
+        crc2.lineTo(x, y + 25);
         crc2.closePath();
         crc2.fill();
         crc2.stroke();
 
-
-    }
-    function drawSkier(_position: Vector, _size: Vector): void {
-
-        let skier: number = 20;
-        drawSki();
-        console.log("ski1");
-        crc2.save();
-        crc2.translate(_position.x, _position.y);
-        for (let drawn: number = 0; drawn < skier; drawn++) {
-            crc2.save();
-            console.log("hallo");
-
-            let x: number = (Math.random() - 0.5) * _position.x;
-            let y: number = (Math.random() * _position.y);
-            crc2.translate(x, y);
-            crc2.fill();
-            crc2.restore();
-
-        }
         crc2.restore();
     }
- // for schleife mit 10 durchgängen
-    // jedes mal function aufrufen  oder drin Bauen 
-    // mit mathrandom random position
-    // randomcolor
-    // string array mit mathrandom bestimmte zahl aus array
+    
+}
+
