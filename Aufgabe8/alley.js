@@ -15,15 +15,16 @@ var Canvas;
         drawCloud1({ x: 180, y: 150 }, { x: 150, y: 60 });
         drawCloud2({ x: 350, y: 60 }, { x: 225, y: 110 });
         drawMountain({ x: 500, y: 350 }, 400, 400, "white", "lightgrey");
-        drawhouse({ x: 400, y: 400 }, 80, 80, "brown", "brown");
+        drawhouse({ x: 400, y: 400 }, 100, 80, "brown", "brown");
         drawhouse2({ x: 650, y: 150 }, 80, 80, "grey", "brown");
         drawroof({ x: 400, y: 400 }, 80, 80, "", "");
         drawroof2();
-        drawtrees();
+        drawTrees();
         drawlines();
         drawsnow({ x: 400, y: 0 }, { x: 800, y: 500 });
         //drawSki();
         drawSkier();
+        drawgondel();
     }
     function drawsnow(_position, _size) {
         let nParticles = 700;
@@ -159,7 +160,7 @@ var Canvas;
         crc2.fill();
         crc2.restore();
     }
-    function drawtrees() {
+    function drawTrees() {
         crc2.save();
         crc2.fillStyle = "green";
         crc2.fillRect(505, 400, 10, 40);
@@ -203,7 +204,7 @@ var Canvas;
         let colors = ["red", "darkblue", "lightgreen", "darkviolet", "blue", "yellow"];
         let random = colors[Math.floor(Math.random() * colors.length)];
         crc2.fillStyle = random;
-        crc2.strokeStyle = crc2.fillStyle;
+        crc2.strokeStyle = "black";
         console.log(random);
         let radius2 = 5;
         console.log("xy" + x + " " + y);
@@ -231,6 +232,27 @@ var Canvas;
         crc2.fill();
         crc2.stroke();
         crc2.restore();
+    }
+    function drawgondel() {
+        crc2.save();
+        crc2.fillStyle = "black";
+        crc2.strokeStyle = "black";
+        crc2.fillRect(405, 300, 30, 30);
+        crc2.beginPath();
+        crc2.moveTo(420, 300);
+        crc2.lineTo(420, 280);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();
+        crc2.fillStyle = "black";
+        crc2.strokeStyle = "black";
+        crc2.fillRect(555, 230, 30, 30);
+        crc2.beginPath();
+        crc2.moveTo(570, 230);
+        crc2.lineTo(570, 210);
+        crc2.closePath();
+        crc2.fill();
+        crc2.stroke();
     }
 })(Canvas || (Canvas = {}));
 //# sourceMappingURL=alley.js.map
