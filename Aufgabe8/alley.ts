@@ -28,7 +28,7 @@ namespace Canvas {
         drawtrees();
         drawlines();
         drawsnow({ x: 400, y: 0 }, { x: 800, y: 500 });
-        drawSki();
+        //drawSki();
         drawSkier();
 
 
