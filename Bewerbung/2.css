@@ -1,0 +1,176 @@
+header {
+    background-color: darkred;
+    height: 400px;
+    width: 800px;
+    -webkit-border-radius: 0px 500px 500px 500px;
+    -moz-border-radius: 0px 500px 500px 500px;
+    border-radius: 0px 0px 700px 700px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -50px;
+}
+
+li {
+    list-style: none;
+    text-align: right;
+    float: right;
+    font-size: 20px;
+}
+
+.usa {
+    text-align: center;
+    margin: auto;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.active {
+    color: darkred;
+}
+
+.button {
+    transition-duration: 0.4s;
+    color: white;
+    background: black;
+    text-decoration: none;
+    display: block;
+    padding: 2px;
+    border: 10px;
+}
+
+.button:hover {
+    background-color: black;
+    padding: 5px;
+    color: darkred;
+}
+
+h1 {
+    font-family: sans-serif;
+    color: darkred;
+    padding: 0px;
+    margin-top: 80px;
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: darkred;
+    padding: 0px;
+    margin-left: 315px;
+    position: sticky;
+    left: 50%;
+    font-size: 40px;
+}
+
+.kontakt {
+    text-align: left;
+}
+
+.about {
+    text-align: center;
+    margin-top: 10px;
+}
+
+h4 {
+    color: white;
+    background: lightgrey;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.Kontakt {
+    color: darkred;
+    position: relative;
+    text-align: left;
+    margin-top: -700px;
+    margin-left: 200px;
+}
+
+style {
+    color: white;
+}
+
+p {
+    text-align: center;
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textkreis {
+    color: rgb(245, 232, 220);
+    font-size: 120px;
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.textkreis1 {
+    color: rgb(245, 232, 220);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    line-height: 50%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.textkreis2 {
+    color: rgb(245, 232, 220);
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.textkreis3 {
+    color: rgb(245, 232, 220);
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    background-image: url("https://raw.githubusercontent.com/Cocoze/EIA-SoSe20/master/Aufgabe3/Hintergrund.png");
+    background-repeat: repeat;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+video {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.insta {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.cf {
+    color: white;
+    margin-top: 100px;
+}
