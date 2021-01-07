@@ -3,15 +3,17 @@ var Ski;
 (function (Ski) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        console.log("ski");
+        console.log("hi");
         let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
         Ski.crc2 = canvas.getContext("2d");
-        Ski.crc2.fillStyle = "black";
-        Ski.crc2.strokeStyle = "white";
+        Ski.crc2.fillStyle = "blue";
+        Ski.crc2.strokeStyle = "blue";
         Ski.createPaths();
-        console.log("ski paths: ", skipaths);
+        let ski = new Ski.Ski(1);
+        console.log("ski draw");
+        ski.draw();
     }
 })(Ski || (Ski = {}));
-//# sourceMappingURL=ski.js.map
+//# sourceMappingURL=main.js.map
