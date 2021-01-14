@@ -1,9 +1,10 @@
 "use strict";
 var Ski;
 (function (Ski_1) {
-    class Ski {
+    class Ski extends Ski_1.Moveable {
         constructor(_size) {
             console.log("ski");
+            super(_position);
             if (_position)
                 this.position = _position.copy();
             else
@@ -23,4 +24,4 @@ var Ski;
     }
     Ski_1.Ski = Ski;
 })(Ski || (Ski = {}));
-//# sourceMappingURL=ski.js.map
+//# sourceMappingURL=snow.js.map

@@ -1,5 +1,5 @@
 namespace Ski {
-    export class Ski {
+    export class Ski extends Moveable {
         position: Vector;
         velocity: Vector;
         size: number;
@@ -7,6 +7,8 @@ namespace Ski {
         constructor(_size: number) {
             console.log("ski");
 
+            super(_position);
+            
             if (_position)
                 this.position = _position.copy();
             else
@@ -18,7 +20,7 @@ namespace Ski {
             this.size = _size;
 
         }
-        
+
         draw(): void {
             console.log("ski draw");
             crc2.save();
